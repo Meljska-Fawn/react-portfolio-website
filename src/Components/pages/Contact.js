@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './style.css';
-
+import TextField from '@mui/material/TextField';
 import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
@@ -49,21 +48,35 @@ function Contact() {
         <div>
             <p>Contact</p>
             <form className="form">
-                <input
+                <TextField
+                    fullWidth label="fullWidth" 
+                    id="fullWidth"
+                    defaultValue="Normal"
+                    variant="standard"
                     value={contactName}
                     name="contactName"
                     onChange={handleInputChange}
                     type="text"
                     placeholder="Full Name"
                 />
-                <input
+                <TextField
+                    fullWidth label="fullWidth" 
+                    id="fullWidth"
+                    defaultValue="Normal"
+                    variant="standard"
                     value={email}
                     name="email"
                     onChange={handleInputChange}
                     type="email"
                     placeholder="Email"
                 />
-                <input
+                <TextField
+                    id="standard-multiline-static"
+                    label="Multiline"
+                    multiline
+                    rows={4}
+                    defaultValue="Default Value"
+                    variant="standard"
                     value={userMessage}
                     name="userMessage"
                     onChange={handleInputChange}
