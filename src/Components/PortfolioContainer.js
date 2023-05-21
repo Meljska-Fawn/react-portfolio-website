@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
+import { Grid } from "@mui/material";
+import { Container } from "@mui/system";
+import Header from "./Header";
+import Footer from "./Footer";
+import NavTabs from './NavTabs';
 import Resume from './pages/Resume';
 import About from './pages/About';
 import Work from './pages/Work';
@@ -25,8 +29,20 @@ export default function PortfolioContainer() {
 
     return (
         <div>
-            <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
+            <Container maxWidth="lg" sx={{ marginTop: 2 }}>
+                <Grid container spacing={5} alignItems="center">
+                    <Grid item xs>
+                        <Header />
+                    </Grid>
+                    <Grid item xs={8}>
+                        {renderPage()}
+                    </Grid>
+                    <Grid item xs>
+                        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+                    </Grid>
+                </Grid>
+                <Footer />
+            </Container>
         </div>
     );
 }

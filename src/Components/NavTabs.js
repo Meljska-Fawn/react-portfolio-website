@@ -2,7 +2,7 @@ import React from 'react';
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
-function Navbar({ currentPage, handlePageChange }) {
+function NavTabs({ currentPage, handlePageChange }) {
     return (
         <ul className="nav nav-tabs">
             <li className="nav-item">
@@ -18,22 +18,22 @@ function Navbar({ currentPage, handlePageChange }) {
             </li>
             <li className="nav-item">
                 <a
-                    href="#resume"
-                    onClick={() => handlePageChange('Resume')}
-                    // Check to see if the currentPage is `Resume`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-                    className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
-                >
-                    Resume
-                </a>
-            </li>
-            <li className="nav-item">
-                <a
                     href="#work"
                     onClick={() => handlePageChange('Work')}
                     // Check to see if the currentPage is `Work`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
                     className={currentPage === 'Work' ? 'nav-link active' : 'nav-link'}
                 >
                     Work
+                </a>
+            </li>
+            <li className="nav-item">
+                <a
+                    href="#resume"
+                    onClick={() => handlePageChange('Resume')}
+                    // Check to see if the currentPage is `Resume`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+                    className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
+                >
+                    Resume
                 </a>
             </li>
             <li className="nav-item">
@@ -50,4 +50,4 @@ function Navbar({ currentPage, handlePageChange }) {
     );
 }
 
-export default Navbar;
+export default NavTabs;
