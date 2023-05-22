@@ -1,11 +1,16 @@
 import React from 'react';
+import Typography from "@mui/material/Typography";
+import { Link } from "react-scroll";
+import { styled } from "@mui/system";
+import Box from "@mui/material/Box";
 
 // Here we are using object destructuring assignment to pluck off our variables from the props object
 // We assign them to their own variable names
 function NavTabs({ currentPage, handlePageChange }) {
+
     return (
-        <ul className="nav nav-tabs">
-            <li className="nav-item">
+        <Box>
+            <li>
                 <a
                     href="#about"
                     onClick={() => handlePageChange('About')}
@@ -16,7 +21,7 @@ function NavTabs({ currentPage, handlePageChange }) {
                     About
                 </a>
             </li>
-            <li className="nav-item">
+            <li>
                 <a
                     href="#work"
                     onClick={() => handlePageChange('Work')}
@@ -26,7 +31,7 @@ function NavTabs({ currentPage, handlePageChange }) {
                     Work
                 </a>
             </li>
-            <li className="nav-item">
+            <li>
                 <a
                     href="#resume"
                     onClick={() => handlePageChange('Resume')}
@@ -36,7 +41,7 @@ function NavTabs({ currentPage, handlePageChange }) {
                     Resume
                 </a>
             </li>
-            <li className="nav-item">
+            <li>
                 <a
                     href="#contact"
                     onClick={() => handlePageChange('Contact')}
@@ -46,8 +51,8 @@ function NavTabs({ currentPage, handlePageChange }) {
                     Contact
                 </a>
             </li>
-        </ul>
+        </Box>
     );
-}
+};
 
 export default NavTabs;

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { validateEmail } from '../../utils/helpers';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
 function Contact() {
     // Here we set two state variables for firstName and lastName using `useState`
@@ -49,7 +51,7 @@ function Contact() {
             <p>Contact</p>
             <form className="form">
                 <TextField
-                    fullWidth label="fullWidth" 
+                    fullWidth label="Full Name"
                     id="fullWidth"
                     defaultValue="Normal"
                     variant="standard"
@@ -57,10 +59,9 @@ function Contact() {
                     name="contactName"
                     onChange={handleInputChange}
                     type="text"
-                    placeholder="Full Name"
                 />
                 <TextField
-                    fullWidth label="fullWidth" 
+                    fullWidth label="Email"
                     id="fullWidth"
                     defaultValue="Normal"
                     variant="standard"
@@ -68,11 +69,10 @@ function Contact() {
                     name="email"
                     onChange={handleInputChange}
                     type="email"
-                    placeholder="Email"
                 />
                 <TextField
                     id="standard-multiline-static"
-                    label="Multiline"
+                    fullWidth label="Message"
                     multiline
                     rows={4}
                     defaultValue="Default Value"
@@ -81,9 +81,8 @@ function Contact() {
                     name="userMessage"
                     onChange={handleInputChange}
                     type="text"
-                    placeholder="Message"
                 />
-                <button type="button" onClick={handleFormSubmit}>Send</button>
+                    <Button onClick={handleFormSubmit} type="button" variant="contained" endIcon={<SendIcon />}>Send</Button>
             </form>
             {errorMessage && (
                 <div>

@@ -7,12 +7,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-        Melissa Vaughn
+      Melissa Vaughn
       {' '}
       {new Date().getFullYear()}
     </Typography>
@@ -44,20 +45,24 @@ export default function Footer() {
                 : theme.palette.grey[800],
           }}
         >
-          <Container maxWidth="lg" align="center">
-            <a href="https://github.com/Meljska-Fawn">
-              <GitHubIcon fontSize="large" />
-            </a>
-            <a href="https://www.linkedin.com/in/melissa-vaughn-663b35226/">
-              <LinkedInIcon fontSize="large" />
-            </a>
-            <a href="https://www.instagram.com/melissa.lavaughn/">
-              <InstagramIcon fontSize="large" />
-            </a>
-            <Copyright />
+          <Container maxWidth="lg">
+            <Stack direction="row" spacing={2}>
+              <Copyright />
+              <Container alignItems="right">
+              <a href="https://github.com/Meljska-Fawn">
+                <GitHubIcon fontSize="large" />
+              </a>
+              <a href="https://www.linkedin.com/in/melissa-vaughn-663b35226/">
+                <LinkedInIcon fontSize="large" />
+              </a>
+              <a href="https://www.instagram.com/melissa.lavaughn/">
+                <InstagramIcon fontSize="large" />
+              </a>
+              </Container>
+            </Stack>
           </Container>
         </Box>
       </Box>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
