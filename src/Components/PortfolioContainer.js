@@ -29,20 +29,20 @@ export default function PortfolioContainer() {
 
     return (
         <div>
-            <Container maxWidth="lg" sx={{ marginTop: 2 }}>
-                <Grid container spacing={5}>
-                    <Grid item xs>
-                        <Header />
+                <Container maxWidth="lg" sx={{ marginTop: 2 }}>
+                    <Grid container spacing={5}>
+                        <Grid item xs>
+                            <Header />
+                        </Grid>
+                        <Grid item xs={8}>
+                            {renderPage()}
+                        </Grid>
+                        <Grid item xs>
+                            <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+                        </Grid>
                     </Grid>
-                    <Grid item xs={8}>
-                        {renderPage()}
-                    </Grid>
-                    <Grid item xs>
-                        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-                    </Grid>
-                </Grid>
-                <Footer />
-            </Container>
+                    <Footer />
+                </Container>
         </div>
     );
 }
