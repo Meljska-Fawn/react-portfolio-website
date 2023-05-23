@@ -45,7 +45,7 @@ export default function PortfolioContainer() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12}>
+                    <Col xs={12} className="fixed-bottom max-width-lg bg-light pb-2 pt-2 d-flex" style={{ maxHeight: '200px' }}>
                         <Footer />
                     </Col>
                 </Row>
