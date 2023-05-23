@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Grid } from "@mui/material";
-import { Container } from "@mui/system";
 import Header from "./Header";
 import Footer from "./Footer";
 import NavTabs from './NavTabs';
@@ -8,6 +6,9 @@ import Resume from './pages/Resume';
 import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function PortfolioContainer() {
     const [currentPage, setCurrentPage] = useState('About');
@@ -29,20 +30,26 @@ export default function PortfolioContainer() {
 
     return (
         <div>
-                <Container maxWidth="lg" sx={{ marginTop: 2 }}>
-                    <Grid container spacing={5}>
-                        <Grid item xs>
-                            <Header />
-                        </Grid>
-                        <Grid item xs={8}>
-                            {renderPage()}
-                        </Grid>
-                        <Grid item xs>
-                            <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-                        </Grid>
-                    </Grid>
-                    <Footer />
-                </Container>
-        </div>
+            <Container>
+                <Row>
+                    <Col xs={12} md={8}>
+                        <Header />
+                    </Col>
+                    <Col xs={6} md={4}>
+                        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={8}>
+                        {renderPage()}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12}>
+                        <Footer />
+                    </Col>
+                </Row>
+            </Container>
+        </div >
     );
 }

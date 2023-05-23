@@ -5,10 +5,9 @@ import Stack from '@mui/material/Stack';
 // We assign them to their own variable names
 function NavTabs({ currentPage, handlePageChange }) {
 
-
     return (
         <ul className="nav">
-            <Stack direction="column" spacing={-1}>
+            <Stack direction="horizontal" spacing={-1}>
                 <li className="nav-item">
                     <a
                         href="#about"
