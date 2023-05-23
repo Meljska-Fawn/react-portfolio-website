@@ -40,7 +40,7 @@ export default function PortfolioContainer() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} md={8}>
+                    <Col xs={12}>
                         {renderPage()}
                     </Col>
                 </Row>
