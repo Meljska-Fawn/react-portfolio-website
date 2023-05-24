@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import NavTabs from './NavTabs';
-import Resume from './pages/Resume';
+import Skills from './pages/Skills';
 import About from './pages/About';
-import Work from './pages/Work';
+import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Roll from 'react-reveal/Roll';
 
 export default function PortfolioContainer() {
     const [currentPage, setCurrentPage] = useState('About');
@@ -17,11 +18,11 @@ export default function PortfolioContainer() {
         if (currentPage === 'About') {
             return <About />;
         }
-        if (currentPage === 'Work') {
-            return <Work />;
+        if (currentPage === 'Projects') {
+            return <Projects />;
         }
-        if (currentPage === 'Resume') {
-            return <Resume />;
+        if (currentPage === 'Skills') {
+            return <Skills />;
         }
         return <Contact />;
     };
@@ -41,10 +42,12 @@ export default function PortfolioContainer() {
                 </Row>
                 <Row>
                     <Col xs={12}>
-                        {renderPage()}
+                        <Roll left>
+                            {renderPage()}
+                        </Roll>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="mt-8">
                     <Col xs={12} className="fixed-bottom max-width-lg bg-light pb-2 pt-2 d-flex" style={{ maxHeight: '200px' }}>
                         <Footer />
                     </Col>

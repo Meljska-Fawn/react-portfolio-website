@@ -72,7 +72,7 @@ function Contact() {
                 />
                 <TextField
                     id="standard-multiline-static"
-                    fullWidth label="Message"
+                    fullWidth label="Type your message here"
                     multiline
                     rows={4}
                     defaultValue="Default Value"
