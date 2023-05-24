@@ -3,8 +3,16 @@ import TextField from '@mui/material/TextField';
 import { validateEmail } from '../../utils/helpers';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import SatelliteIcon from '@mui/icons-material/Satellite'; import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
+import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
 
-function Contact() {
+
+export default function Contact() {
     // Here we set two state variables for firstName and lastName using `useState`
     const [contactName, setContactName] = useState('');
     const [email, setEmail] = useState('');
@@ -47,50 +55,99 @@ function Contact() {
     };
 
     return (
-        <div>
-            <p>Contact</p>
-            <form className="form">
-                <TextField
-                    fullWidth label="Full Name"
-                    id="fullWidth"
-                    defaultValue="Normal"
-                    variant="standard"
-                    value={contactName}
-                    name="contactName"
-                    onChange={handleInputChange}
-                    type="text"
-                />
-                <TextField
-                    fullWidth label="Email"
-                    id="fullWidth"
-                    defaultValue="Normal"
-                    variant="standard"
-                    value={email}
-                    name="email"
-                    onChange={handleInputChange}
-                    type="email"
-                />
-                <TextField
-                    id="standard-multiline-static"
-                    fullWidth label="Type your message here"
-                    multiline
-                    rows={4}
-                    defaultValue="Default Value"
-                    variant="standard"
-                    value={userMessage}
-                    name="userMessage"
-                    onChange={handleInputChange}
-                    type="text"
-                />
-                    <Button onClick={handleFormSubmit} type="button" variant="contained" endIcon={<SendIcon />}>Send</Button>
-            </form>
-            {errorMessage && (
-                <div>
-                    <p className="error-text">{errorMessage}</p>
-                </div>
-            )}
-        </div>
+        <Container className="fluid mt-5">
+            <Row>
+                <Col xs={12} md={6} className="mb-3">
+                    <Row>
+                        <Col className="d-flex align-items-left"><SatelliteIcon fontSize="large" /></Col>
+                        <Col>
+                            <h4>Location</h4>
+                            <p>White Salmon, Washington</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col><ForwardToInboxIcon /></Col>
+                        <Col>
+                            <h4>Email</h4>
+                            <p>Meli.explores@gmail.com</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col><PhonelinkRingIcon /></Col>
+                        <Col>
+                            <h4>Phone</h4>
+                            <p>+1540.819.4352</p>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col xs={12} md={6} className="mb-3 d-flex align-items-center justify-content-center">
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            '& > :not(style)': {
+                                m: 1,
+                                width: 500,
+                                height: 450,
+                            },
+                        }}
+                    >
+                        <Paper elevation={3}>
+                            <div className="p-3">
+                                <h2>Let's Connect</h2>
+                            </div>
+                            <form className="form">
+                                <div className="px-3">
+                                    <TextField
+                                        fullWidth label="Full Name"
+                                        id="fullWidth"
+                                        defaultValue="Normal"
+                                        variant="standard"
+                                        value={contactName}
+                                        name="contactName"
+                                        onChange={handleInputChange}
+                                        type="text"
+                                    />
+                                </div>
+                                <div className="p-3">
+                                    <TextField
+                                        fullWidth label="Email"
+                                        id="fullWidth"
+                                        defaultValue="Normal"
+                                        variant="standard"
+                                        value={email}
+                                        name="email"
+                                        onChange={handleInputChange}
+                                        type="email"
+                                    />
+                                </div>
+                                <div className="px-3">
+                                    <TextField
+                                        id="standard-multiline-static"
+                                        fullWidth label="Type your message here"
+                                        multiline
+                                        rows={6}
+                                        defaultValue="Default Value"
+                                        variant="standard"
+                                        value={userMessage}
+                                        name="userMessage"
+                                        onChange={handleInputChange}
+                                        type="text"
+                                    />
+                                </div>
+                                <div className="p-3">
+                                    <Button onClick={handleFormSubmit} type="button" variant="contained" endIcon={<SendIcon />}>Send</Button>
+                                </div>
+                            </form>
+                        </Paper>
+                        {errorMessage && (
+                            <div>
+                                <p className="error-text">{errorMessage}</p>
+                            </div>
+                        )}
+                    </Box>
+                </Col>
+            </Row>
+        </Container >
     );
 }
-
-export default Contact;

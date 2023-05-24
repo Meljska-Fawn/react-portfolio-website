@@ -3,57 +3,68 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Roll from 'react-reveal/Roll';
 
-export default function Work() {
+// const styles = {
+//     linkStyle: {
+//         color: 'inherit',
+//         text- decoration: 'none',
+// },
+
+//     link-unstyled: hover: {
+//         text - decoration: 'none',
+// }
+// }
+
+export default function Projects() {
     return (
-        <Container>
-            <Row>
-            <Col xs={12} md={6}>
-                <div className="flex flex-wrap -m-4">
-                    {projects.map((project) => (
-                        <a href={project.deployed} key={project.img} className="sm:w-1/2 w-100 p-4">
-                            <div className="flex relative">
-                                <img
-                                    alt="gallery"
-                                    className="absolute img-fluid rounded"
-                                    src={project.img}
-                                />
-                                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                                    <h1 className="title-font text-lg font-medium text-white mb-3">
-                                        {project.title}<a href={project.github}>
-                                            <GitHubIcon />
-                                        </a>
-                                    </h1>
-                                </div>
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </Col>
-            <Col xs={12} md={6}>
-                <div className="flex flex-wrap -m-4">
-                    {secondProjects.map((secondProject) => (
-                        <a href={secondProject.deployed} key={secondProject.img} className="sm:w-1/2 w-100 p-4">
-                            <div className="flex relative">
-                                <img
-                                    alt="gallery"
-                                    className="absolute inset-0 w-full h-full object-cover object-center"
-                                    src={secondProject.img}
-                                />
-                                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                                    <h1 className="title-font text-lg font-medium text-white mb-3">
-                                        {secondProject.title}<a href={secondProject.github}>
-                                            <GitHubIcon />
-                                        </a>
-                                    </h1>
-                                </div>
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </Col>
-            </Row>
-        </Container>
+        <Roll left>
+            <Container className="fluid mt-5" style={{ maxWidth: '1000px' }}>
+                <Row className="mb-3">
+                    <Col xs={12} md={6} className="mb-3">
+                        <Card style={{ width: '30rem' }} className="flex flex-wrap -m-4 mb-3">
+                            {projects.map((project) => (
+                                <a href={project.deployed} key={project.img} className="position-relative dark-link">
+                                    <img
+                                        alt="gallery"
+                                        className="img-fluid rounded"
+                                        src={project.img}
+                                    />
+                                    <Card.Body>
+                                        <Card.Title className="">
+                                            {project.title}<Card.Link href={project.github} className="dark-link">
+                                                <GitHubIcon />
+                                            </Card.Link>
+                                        </Card.Title>
+                                    </Card.Body>
+                                </a>
+                            ))}
+                        </Card>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <Card style={{ width: '30rem' }} className="flex flex-wrap -m-4">
+                            {secondProjects.map((secondProject) => (
+                                <a href={secondProject.deployed} key={secondProject.img} className="">
+                                    <Card.Img variant="top"
+                                        alt="gallery"
+                                        className="img-fluid rounded"
+                                        src={secondProject.img}
+                                    />
+                                    <Card.Body>
+                                        <Card.Title className="">
+                                            {secondProject.title}<Card.Link href={secondProject.github}>
+                                                <GitHubIcon />
+                                            </Card.Link>
+                                        </Card.Title>
+                                    </Card.Body>
+                                </a>
+                            ))}
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+        </Roll>
     );
 }
 

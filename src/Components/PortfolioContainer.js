@@ -9,7 +9,6 @@ import Contact from './pages/Contact';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Roll from 'react-reveal/Roll';
 
 export default function PortfolioContainer() {
     const [currentPage, setCurrentPage] = useState('About');
@@ -40,11 +39,9 @@ export default function PortfolioContainer() {
                         <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
                     </Col>
                 </Row>
-                <Row>
+                <Row className="mb-8">
                     <Col xs={12}>
-                        <Roll left>
                             {renderPage()}
-                        </Roll>
                     </Col>
                 </Row>
                 <Row className="mt-8">
