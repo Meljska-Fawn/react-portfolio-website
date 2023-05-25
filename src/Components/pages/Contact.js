@@ -55,32 +55,32 @@ export default function Contact() {
     };
 
     return (
-        <Container className="fluid mt-5">
-            <Row>
+        <Container>
+            <Row className="fluid mt-5 d-flex align-items-center">
                 <Col xs={12} md={6} className="mb-3">
                     <Row>
-                        <Col className="d-flex align-items-left"><SatelliteIcon fontSize="large" /></Col>
-                        <Col>
+                        <Col className="col-1"><SatelliteIcon fontSize="large" /></Col>
+                        <Col className="col-11">
                             <h4>Location</h4>
                             <p>White Salmon, Washington</p>
                         </Col>
                     </Row>
                     <Row>
-                        <Col><ForwardToInboxIcon /></Col>
-                        <Col>
+                        <Col className="d-flex align-items-right col-1"><ForwardToInboxIcon /></Col>
+                        <Col className="col-11">
                             <h4>Email</h4>
                             <p>Meli.explores@gmail.com</p>
                         </Col>
                     </Row>
                     <Row>
-                        <Col><PhonelinkRingIcon /></Col>
-                        <Col>
+                        <Col className="d-flex align-items-right col-1"><PhonelinkRingIcon /></Col>
+                        <Col className="col-11">
                             <h4>Phone</h4>
                             <p>+1540.819.4352</p>
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={12} md={6} className="mb-3 d-flex align-items-center justify-content-center">
+                <Col xs={12} md={6} className="">
                     <Box
                         sx={{
                             display: 'flex',

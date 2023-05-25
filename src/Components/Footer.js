@@ -20,9 +20,8 @@ function Copyright() {
 
 export default function Footer() {
   return (
-    <Container className="d-flex align-items-center justify-content-center">
-      <Row>
-        <Col >
+      <Row className="fixed-bottom max-width-lg bg-light pb-2 pt-2 d-flex align-items-center" style={{ maxHeight: '200px' }}>
+        <Col className="">
           <a href="https://github.com/Meljska-Fawn">
             <GitHubIcon fontSize="large" />
           </a>
@@ -37,6 +36,5 @@ export default function Footer() {
           <Copyright />
         </Col>
       </Row>
-    </Container>
   );
 }

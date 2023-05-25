@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Roll from 'react-reveal/Roll';
+import Slide from 'react-reveal/Slide';
 
 // const styles = {
 //     linkStyle: {
@@ -18,8 +18,9 @@ import Roll from 'react-reveal/Roll';
 // }
 
 export default function Projects() {
+    // const [hover, setHover] = useState(false);
     return (
-        <Roll left>
+        <Slide left>
             <Container className="fluid mt-5" style={{ maxWidth: '1000px' }}>
                 <Row className="mb-3">
                     <Col xs={12} md={6} className="mb-3">
@@ -30,6 +31,7 @@ export default function Projects() {
                                         alt="gallery"
                                         className="img-fluid rounded"
                                         src={project.img}
+                                        // src={hover ? project.img : project.still}
                                     />
                                     <Card.Body>
                                         <Card.Title className="">
@@ -64,25 +66,28 @@ export default function Projects() {
                     </Col>
                 </Row>
             </Container>
-        </Roll>
+        </Slide>
     );
 }
 
 const projects = [
     {
         img: './images/weather-dashboard.gif',
+        still: './images/write-this-down.png',
         deployed: 'https://meljska-fawn.github.io/5-day-weather-forecast/',
         title: '5 Day Weather Forecast',
         github: 'https://github.com/Meljska-Fawn/5-day-weather-forecast',
     },
     {
         img: './images/jobstable_course.gif',
+        still: '',
         deployed: 'https://jobstacle-course.herokuapp.com/login',
         title: 'Jobstacle Course',
         github: 'https://github.com/Meljska-Fawn/Jobstacle-course',
     },
     {
         img: './images/tech-blog.gif',
+        still: '',
         deployed: 'https://obscure-dusk-87979.herokuapp.com/',
         title: 'Talk Techy to Me - Tech Blog',
         github: 'https://github.com/Meljska-Fawn/talk_techy_to_me',
