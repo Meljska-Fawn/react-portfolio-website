@@ -20,7 +20,7 @@ export default function About() {
                         MELISSA</h1>
                 </Col>
                 <Col xs={12} md={6}>
-                    <Image src="../images/profile-photo_bw.jpeg" className="img-fluid rounded-pill" style={{ border: '2px solid black', maxHeight: '400px' }}></Image>
+                    <Image src="./images/profile-photo_bw.jpeg" className="img-fluid rounded-pill" style={{ border: '2px solid black', maxHeight: '400px' }}></Image>
                 </Col>
             </Row>
             <Row>
