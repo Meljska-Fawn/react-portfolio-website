@@ -1,48 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Slide from 'react-reveal/Slide';
+import ProjectCard from './ProjectCard';
 
-// const styles = {
-//     linkStyle: {
-//         color: 'inherit',
-//         text- decoration: 'none',
-// },
-
-//     link-unstyled: hover: {
-//         text - decoration: 'none',
-// }
-// }
+const styles = {
+    card: {
+        marginTop: 80,
+        maxWidth: 1000,
+}
+}
 
 export default function Projects() {
-    // const [hover, setHover] = useState(false);
     return (
         <Slide left>
-            <Container className="fluid mt-5" style={{ maxWidth: '1000px' }}>
+            <Container className="fluid" style={styles.card}>
                 <Row className="mb-3">
                     <Col xs={12} md={6} className="mb-3">
-                        <Card style={{ width: '30rem' }} className="flex flex-wrap -m-4 mb-3">
-                            {projects.map((project) => (
-                                <a href={project.deployed} key={project.img} className="position-relative dark-link">
-                                    <img
-                                        alt="gallery"
-                                        className="img-fluid rounded"
-                                        src={project.img}
-                                        // src={hover ? project.img : project.still}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title className="">
-                                            {project.title}<Card.Link href={project.github} className="dark-link">
-                                                <GitHubIcon />
-                                            </Card.Link>
-                                        </Card.Title>
-                                    </Card.Body>
-                                </a>
-                            ))}
-                        </Card>
+                        {projects.map ((project) => <ProjectCard project={project}/>)}
                     </Col>
                     <Col xs={12} md={6}>
                         <Card style={{ width: '30rem' }} className="flex flex-wrap -m-4">
@@ -80,14 +58,14 @@ const projects = [
     },
     {
         img: './images/jobstable_course.gif',
-        still: '',
+        still: './images/write-this-down.png',
         deployed: 'https://jobstacle-course.herokuapp.com/login',
         title: 'Jobstacle Course',
         github: 'https://github.com/Meljska-Fawn/Jobstacle-course',
     },
     {
         img: './images/tech-blog.gif',
-        still: '',
+        still: './images/write-this-down.png',
         deployed: 'https://obscure-dusk-87979.herokuapp.com/',
         title: 'Talk Techy to Me - Tech Blog',
         github: 'https://github.com/Meljska-Fawn/talk_techy_to_me',
@@ -95,19 +73,21 @@ const projects = [
 ];
 const secondProjects = [
     {
-        img: './images/work-day-scheduler.gif',
-        deployed: 'https://meljska-fawn.github.io/organize-your-workday/',
-        title: 'Organize Your Workday',
-        github: 'https://github.com/Meljska-Fawn/organize-your-workday',
+        img: './images/bloom.png',
+        deployed: 'https://bloomv1.herokuapp.com/',
+        title: 'Bloom - Track Your Carbon Footprint',
+        github: 'https://github.com/Meljska-Fawn/bloom',
     },
     {
         img: './images/mindful-cal-c.gif',
+        still: './images/write-this-down.png',
         deployed: 'https://aboubacar7.github.io/mindful-cal-c/',
         title: 'Mindful (Cal)c',
         github: 'https://github.com/Meljska-Fawn/mindful-calc-c',
     },
     {
         img: './images/write-this-down.png',
+        still: './images/write-this-down.png',
         deployed: 'https://meljska-fawn.github.io/hey-write-this-down/',
         title: 'Hey! Write This Down',
         github: 'https://github.com/Meljska-Fawn/hey-write-this-down',
